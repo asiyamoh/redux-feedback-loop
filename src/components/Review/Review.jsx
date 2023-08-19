@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import axios from 'axios'
 
 function Review() {
 
@@ -12,18 +13,23 @@ function Review() {
     console.log('support:', supportReducers)
     console.log('Feedback:', feedbackReducers)
 
+    const handleSubmit = () => {
+        console.log('IN THIS BITCH')
+    }
+
     return (
         <>
             <h1>Review Your Feedback</h1>
             <div>
                 <h4>
-                    <ul>
+                    <ul style={{listStyle: "none"}}>
                         <li>Feelings: {feelingReducers}</li>
                         <li>Understanding: {understandingReducers}</li>
                         <li>Support: {supportReducers}</li>
                         <li>Comments: {feedbackReducers}</li>
                     </ul>
                 </h4>
+                <button onClick={handleSubmit}>SUBMIT</button>
             </div>
 
         </>
