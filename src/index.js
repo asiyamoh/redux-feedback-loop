@@ -2,10 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/App';
+import { Provider } from 'react-redux'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import logger from 'redux-logger'
+
+
+const feeling = (state = 0, action) => {
+    if(action.type === 'FEELING'){
+        return action.payload;
+    }
+    return state;
+}
+
+
+const storeInstance = createStore(
+    combineReducers({
+        feeling
+    }),
+    applyMiddleware(
+        logger
+    )
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={storeInstance}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );
