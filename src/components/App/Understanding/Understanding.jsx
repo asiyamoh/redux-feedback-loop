@@ -1,12 +1,24 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 function Understanding() {
+
+    const dispatch = useDispatch();
 
     const [newUnderstand, setNewUnderstand] = useState('')
 
     const handleUnderstand = (event) => {
         event.preventDefault();
         console.log('the value:', newUnderstand)
+        if(newUnderstand > 5){
+            alert('Enter a number between  1-5!')
+        }
+        else{
+            dispatch({
+                type:'UNDERSTANDING',
+                payload: newUnderstand
+            })
+        }
 
     }
 
@@ -28,13 +40,6 @@ function Understanding() {
 
                 <button type='submit'>Submit</button>
             </form>
-
-
-
-
-
-
-
         </>
     )
 
