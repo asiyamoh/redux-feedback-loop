@@ -22,6 +22,7 @@ function Supported() {
             })
             history.push('/feedback');
         }
+        setNewSupport('')
     }
 
     return (

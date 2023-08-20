@@ -23,7 +23,7 @@ function Feeling() {
             })
             history.push('/understanding')
         }
-
+        setNewFeelings('');
     }
 
     return (
