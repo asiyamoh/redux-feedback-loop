@@ -8,26 +8,25 @@ function Review() {
     const supportReducers = useSelector(store => store.support)
     const feedbackReducers = useSelector(store => store.feedback)
 
-    console.log('Feelings:', feelingReducers)
-    console.log('understanding:', understandingReducers)
-    console.log('support:', supportReducers)
-    console.log('Feedback:', feedbackReducers)
+    console.log('Feelings:', typeof feelingReducers)
+    console.log('understanding:', typeof understandingReducers)
+    console.log('support:', typeof supportReducers)
+    console.log('Feedback:', typeof feedbackReducers)
 
     const handleSubmit = () => {
         console.log('IN THIS BITCH')
 
         const newData = {
-            feedbackReducers,
+            feelingReducers,
             understandingReducers,
             supportReducers,
             feedbackReducers
         };
+        console.log('New data:', newData)
 
 
         axios.post('/review', newData)
-        console.log('hey', newData)
             .then((response) => {
-                console.log(response.data)
             }).catch((error) => {
                 console.log('Error with the POST', error)
             })

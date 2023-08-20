@@ -5,16 +5,18 @@ const pool = require('../modules/pool');
 router.post('/', (req,res) => {
     console.log('this is:', req.body)
 
-    const feeling = req.body.feeling
-    const understanding =  req.body.understanding
-    const support = req.body.support
-    const comments = req.body.comments
+    const feeling = req.body.feelingReducers
+    const understanding =  req.body.understandingReducers
+    const support = req.body.supportReducers
+    const comments = req.body.feedbackReducers
 
     const queryText = `INSERT INTO "feedback" 
                     ("feeling", "understanding", "support", "comments")
                     VALUES ($1, $2, $3, $4);`;
 
     const queryParams = [feeling,  understanding, support, comments]
+
+    console.log('this is params:', queryParams)
 
     pool.query(queryText,queryParams)
         .then((result) => {
