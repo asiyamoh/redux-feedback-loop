@@ -12,7 +12,8 @@ function Feeling() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('The value is:', newFeelings)
-        if (newFeelings > 5) {
+        if (newFeelings > 5 || newFeelings < 1) {
+            console.log('hey  in!')
             alert('Enter a Number between 1-5!')
         }
         else {
@@ -20,8 +21,9 @@ function Feeling() {
                 type: 'FEELING',
                 payload: newFeelings
             })
+            history.push('/understanding')
         }
-        history.push('/understanding')
+
     }
 
     return (

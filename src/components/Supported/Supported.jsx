@@ -12,7 +12,7 @@ function Supported() {
     const handleSupport = (event) => {
         event.preventDefault();
         console.log('value:', newSupport)
-        if(newSupport > 5){
+        if(newSupport > 5 || newSupport < 1){
             alert('Please enter a number between 1-5!');
         }
         else{
@@ -20,8 +20,8 @@ function Supported() {
                 type: 'SUPPORT',
                 payload:newSupport
             })
+            history.push('/feedback');
         }
-        history.push('/feedback');
     }
 
     return (
