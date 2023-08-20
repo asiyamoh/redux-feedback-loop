@@ -15,6 +15,22 @@ function Review() {
 
     const handleSubmit = () => {
         console.log('IN THIS BITCH')
+
+        const newData = {
+            feedbackReducers,
+            understandingReducers,
+            supportReducers,
+            feedbackReducers
+        };
+
+
+        axios.post('/review', newData)
+        console.log('hey', newData)
+            .then((response) => {
+                console.log(response.data)
+            }).catch((error) => {
+                console.log('Error with the POST', error)
+            })
     }
 
     return (
@@ -22,7 +38,7 @@ function Review() {
             <h1>Review Your Feedback</h1>
             <div>
                 <h4>
-                    <ul style={{listStyle: "none"}}>
+                    <ul style={{ listStyle: "none" }}>
                         <li>Feelings: {feelingReducers}</li>
                         <li>Understanding: {understandingReducers}</li>
                         <li>Support: {supportReducers}</li>

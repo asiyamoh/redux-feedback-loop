@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.post('/', (req,res) => {
-    console.log(req.body)
+    console.log('this is:', req.body)
 
     const feeling = req.body.feeling
     const understanding =  req.body.understanding
