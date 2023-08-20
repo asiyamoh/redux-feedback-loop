@@ -1,9 +1,11 @@
 import {useState} from 'react'
 import {useDispatch} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
 function Supported() {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const [newSupport, setNewSupport] = useState('')
 
@@ -19,7 +21,7 @@ function Supported() {
                 payload:newSupport
             })
         }
-        
+        history.push('/feedback');
     }
 
     return (
@@ -37,7 +39,7 @@ function Supported() {
                     }}
                     value={newSupport}>
                 </input>
-                <button type='submit'>submit</button>
+                <button type='submit'>Next</button>
             </form>
         </>
     )

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import  {useDispatch} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
 function Feedback() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [newFeedback, setNewFeedback] = useState('')
 
@@ -15,7 +17,8 @@ function Feedback() {
             type:'FEEDBACK',
             payload:newFeedback
         })
-                
+        
+        history.push('/review');
     }
 
     return (
@@ -33,7 +36,7 @@ function Feedback() {
                     }}
                     value={newFeedback}>
                 </input>
-                <button type='submit'>submit</button>
+                <button type='submit'>Next</button>
             </form>
 
 

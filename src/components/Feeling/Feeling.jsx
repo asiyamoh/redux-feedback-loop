@@ -1,9 +1,11 @@
 import {useState} from 'react'
 import {useDispatch} from 'react-redux'
+import {useHistory}  from 'react-router-dom'
 
 function Feeling() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [newFeelings, setNewFeelings] = useState('');
 
@@ -19,6 +21,7 @@ function Feeling() {
                 payload: newFeelings
             })
         }
+        history.push('/understanding')
 
     }
 
@@ -35,7 +38,7 @@ function Feeling() {
                     }}
                     value={newFeelings}>
                 </input>
-                <button type="submit">Submit</button>
+                <button type="submit">Next</button>
             </form>
 
 
