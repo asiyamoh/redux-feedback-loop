@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux"
 import axios from 'axios'
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Feeling from '../Feeling/Feeling'
+
 
 function Review() {
 
@@ -44,7 +47,8 @@ function Review() {
                         <li>Comments: {feedbackReducers}</li>
                     </ul>
                 </h4>
-                <button onClick={handleSubmit}>SUBMIT</button>
+                    <button onClick={handleSubmit}
+                        ><Link to="/"></Link>SUBMIT</button>
             </div>
 
         </>
