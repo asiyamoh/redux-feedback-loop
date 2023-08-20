@@ -11,12 +11,18 @@ const feeling = (state = 0, action) => {
     if(action.type === 'FEELING'){
         return action.payload;
     }
+    if(action.type === 'EMPTY'){
+        return 0;
+    }
     return state;
 }
 
 const understanding = (state = 0, action) => {
     if(action.type === 'UNDERSTANDING'){
         return action.payload
+    }
+    if(action.type === 'EMPTY'){
+        return 0;
     }
     return state
 }
@@ -25,12 +31,18 @@ const support = (state = 0, action) => {
     if(action.type === 'SUPPORT'){
         return action.payload
     }
+    if(action.type === 'EMPTY'){
+        return 0;
+    }
     return state
 }
 
 const feedback  = (state = '', action) => {
     if(action.type === 'FEEDBACK'){
         return action.payload
+    }
+    if(action.type === 'EMPTY'){
+        return '';
     }
     return state
 }

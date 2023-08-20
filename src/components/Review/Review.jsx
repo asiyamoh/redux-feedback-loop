@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux"
 import axios from 'axios'
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-import Feeling from '../Feeling/Feeling'
+import {useHistory} from 'react-router-dom'
+
 
 
 function Review() {
+
+    const history = useHistory();
 
     const feelingReducers = useSelector(store => store.feeling)
     const understandingReducers = useSelector(store => store.understanding)
@@ -33,6 +36,8 @@ function Review() {
             }).catch((error) => {
                 console.log('Error with the POST', error)
             })
+
+        history.push('/success');
     }
 
     return (
@@ -47,8 +52,7 @@ function Review() {
                         <li>Comments: {feedbackReducers}</li>
                     </ul>
                 </h4>
-                    <button onClick={handleSubmit}
-                        ><Link to="/"></Link>SUBMIT</button>
+                    <button onClick={handleSubmit}>SUBMIT</button>
             </div>
 
         </>
