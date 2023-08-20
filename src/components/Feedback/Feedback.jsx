@@ -17,7 +17,6 @@ function Feedback() {
             type:'FEEDBACK',
             payload:newFeedback
         })
-        
         history.push('/review');
     }
 
@@ -38,15 +37,8 @@ function Feedback() {
                 </input>
                 <button type='submit'>Next</button>
             </form>
-
-
-
-
-
-
         </>
     )
-
 }
 
 export default Feedback

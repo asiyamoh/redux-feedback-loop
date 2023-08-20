@@ -12,7 +12,7 @@ function Understanding() {
     const handleUnderstand = (event) => {
         event.preventDefault();
         console.log('the value:', newUnderstand)
-        if(newUnderstand > 5){
+        if(newUnderstand > 5 || newUnderstand < 1){
             alert('Enter a number between  1-5!')
         }
         else{
@@ -20,9 +20,9 @@ function Understanding() {
                 type:'UNDERSTANDING',
                 payload: newUnderstand
             })
+            history.push('/supported');
         }
-        
-        history.push('/supported');
+        setNewUnderstand('')
     }
 
     return (
