@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux"
 import axios from 'axios'
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useHistory} from 'react-router-dom'
 
 
@@ -14,13 +13,7 @@ function Review() {
     const supportReducers = useSelector(store => store.support)
     const feedbackReducers = useSelector(store => store.feedback)
 
-    console.log('Feelings:', typeof feelingReducers)
-    console.log('understanding:', typeof understandingReducers)
-    console.log('support:', typeof supportReducers)
-    console.log('Feedback:', typeof feedbackReducers)
-
     const handleSubmit = () => {
-        console.log('IN THIS BITCH')
 
         const newData = {
             feelingReducers,

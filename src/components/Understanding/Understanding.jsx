@@ -21,7 +21,6 @@ function Understanding() {
                 payload: newUnderstand
             })
         }
-        
         history.push('/supported');
     }
 

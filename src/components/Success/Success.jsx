@@ -15,14 +15,11 @@ function Success() {
     }
 
     const handleNewFeedback = () => {
-        
-        console.log('in this')
         dispatch({
             type: 'EMPTY'
         })
 
         history.push('/')
-
     }
 
     return (
@@ -33,11 +30,8 @@ function Success() {
                 <h1 style={styling}>Thank You!</h1>
                 <button onClick={handleNewFeedback}>Leave New Feedback</button>
             </div>
-
-
         </>
     )
-
 }
 
 export default Success;

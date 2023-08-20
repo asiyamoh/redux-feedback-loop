@@ -1,6 +1,6 @@
-import {useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {useHistory}  from 'react-router-dom'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 function Feeling() {
 
@@ -12,17 +12,16 @@ function Feeling() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('The value is:', newFeelings)
-        if(newFeelings > 5){
+        if (newFeelings > 5) {
             alert('Enter a Number between 1-5!')
         }
-        else{
+        else {
             dispatch({
                 type: 'FEELING',
                 payload: newFeelings
             })
         }
         history.push('/understanding')
-
     }
 
     return (
@@ -40,11 +39,8 @@ function Feeling() {
                 </input>
                 <button type="submit">Next</button>
             </form>
-
-
         </>
     )
-
 }
 
 export default Feeling;

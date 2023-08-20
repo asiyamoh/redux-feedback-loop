@@ -43,7 +43,6 @@ function Supported() {
             </form>
         </>
     )
-
 }
 
 export default Supported
